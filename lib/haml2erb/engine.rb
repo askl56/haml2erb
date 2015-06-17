@@ -92,7 +92,7 @@ module Haml2Erb
         concat_merged_text("\n") unless opts[:in_tag] || opts[:nuke_inner_whitespace]
 
         # push_generated_script(erb_tag.inspect)
-        # 
+        #
         # concat_merged_text("\n") unless opts[:in_tag] || opts[:nuke_inner_whitespace]
 
         # @output_tabs += 1
@@ -102,7 +102,7 @@ module Haml2Erb
       flush_merged_text
       push_generated_script erb_tag.inspect
       concat_merged_text("\n") unless opts[:in_tag] || opts[:nuke_inner_whitespace]
-      
+
       # push_silent text
 
       @output_tabs += 1 unless opts[:nuke_inner_whitespace]
@@ -193,6 +193,7 @@ module Haml2Erb
         else
           attributes_hashes = ", (#{attributes_hashes.join(").merge(")})"
         end
+        attributes_hashes.gsub! ",}", "}"
 
         push_merged_text "<#{t[:name]}", 0, !t[:nuke_outer_whitespace]
 
