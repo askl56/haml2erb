@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-haml = %q{
+haml = <<HAML
 !!!
 %html(lang="en")
   %head(dynamic="#{attribute}")
@@ -35,9 +35,10 @@ haml = %q{
     %aside.right
       %section#tweets(data-widget="twitter")
       %section#hammurabi
-}
+HAML
 
-erb = %q{<!DOCTYPE html>
+erb = <<ERB
+<!DOCTYPE html>
 <html lang='en'>
   <head <%= tag_options({"dynamic" => "#{attribute}"}, false) %>>
     <% ciao %>
@@ -73,8 +74,7 @@ erb = %q{<!DOCTYPE html>
     </aside>
   </body>
 </html>
-}
-
+ERB
 
 describe 'haml2erb' do
   it 'converts to ERB' do
