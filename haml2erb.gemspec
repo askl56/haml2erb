@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   # s.add_development_dependency "rspec"
   # s.add_runtime_dependency "rest-client"
 
-  s.add_runtime_dependency     'haml', '~> 3.1.3'
+  s.add_runtime_dependency     'haml'
   s.add_development_dependency 'rspec', '~> 2.0'
   s.add_development_dependency 'rake'
 end
